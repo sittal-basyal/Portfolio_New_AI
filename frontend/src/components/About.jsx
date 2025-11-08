@@ -4,44 +4,44 @@ import { personalInfo, aboutText } from '../data/mock';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           About <span className="text-cyan-500">Me</span>
         </h2>
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6 order-2 md:order-1">
-            <h3 className="text-2xl font-bold text-gray-800">{aboutText.greeting}</h3>
-            <p className="text-gray-600 leading-relaxed">{aboutText.description1}</p>
-            <p className="text-gray-600 leading-relaxed">{aboutText.description2}</p>
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200">{aboutText.greeting}</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{aboutText.description1}</p>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{aboutText.description2}</p>
             
             <div className="space-y-4 pt-6">
-              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-cyan-50 transition-colors duration-200">
-                <div className="p-2 bg-cyan-100 rounded-lg">
-                  <MapPin className="text-cyan-600" size={20} />
+              <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-cyan-50 dark:hover:bg-cyan-950 transition-colors duration-200">
+                <div className="p-2 bg-cyan-100 dark:bg-cyan-900 rounded-lg">
+                  <MapPin className="text-cyan-600 dark:text-cyan-400" size={20} />
                 </div>
-                <span className="text-gray-700">{personalInfo.location}</span>
+                <span className="text-gray-700 dark:text-gray-300">{personalInfo.location}</span>
               </div>
               
-              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-cyan-50 transition-colors duration-200">
-                <div className="p-2 bg-cyan-100 rounded-lg">
-                  <Mail className="text-cyan-600" size={20} />
+              <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-cyan-50 dark:hover:bg-cyan-950 transition-colors duration-200">
+                <div className="p-2 bg-cyan-100 dark:bg-cyan-900 rounded-lg">
+                  <Mail className="text-cyan-600 dark:text-cyan-400" size={20} />
                 </div>
-                <span className="text-gray-700">{personalInfo.email}</span>
+                <span className="text-gray-700 dark:text-gray-300">{personalInfo.email}</span>
               </div>
               
-              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-cyan-50 transition-colors duration-200">
-                <div className="p-2 bg-cyan-100 rounded-lg">
-                  <Phone className="text-cyan-600" size={20} />
+              <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-cyan-50 dark:hover:bg-cyan-950 transition-colors duration-200">
+                <div className="p-2 bg-cyan-100 dark:bg-cyan-900 rounded-lg">
+                  <Phone className="text-cyan-600 dark:text-cyan-400" size={20} />
                 </div>
-                <span className="text-gray-700">{personalInfo.phone}</span>
+                <span className="text-gray-700 dark:text-gray-300">{personalInfo.phone}</span>
               </div>
               
-              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-cyan-50 transition-colors duration-200">
-                <div className="p-2 bg-cyan-100 rounded-lg">
-                  <Github className="text-cyan-600" size={20} />
+              <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-cyan-50 dark:hover:bg-cyan-950 transition-colors duration-200">
+                <div className="p-2 bg-cyan-100 dark:bg-cyan-900 rounded-lg">
+                  <Github className="text-cyan-600 dark:text-cyan-400" size={20} />
                 </div>
-                <span className="text-gray-700">{personalInfo.github}</span>
+                <span className="text-gray-700 dark:text-gray-300">{personalInfo.github}</span>
               </div>
             </div>
           </div>

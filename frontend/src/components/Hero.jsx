@@ -41,20 +41,20 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="home" className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fadeIn">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
               Hi, I'm <span className="text-cyan-500">Sittal Basyal</span>
             </h1>
             <div className="h-16">
-              <p className="text-3xl md:text-4xl font-semibold text-gray-700">
+              <p className="text-3xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300">
                 {displayedText}
                 <span className="animate-pulse">|</span>
               </p>
             </div>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               {personalInfo.tagline}
             </p>
             <div className="flex flex-wrap gap-4">
@@ -67,7 +67,7 @@ const Hero = () => {
               <Button
                 onClick={() => scrollToSection('contact')}
                 variant="outline"
-                className="border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-50 px-8 py-6 text-lg"
+                className="border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-50 dark:hover:bg-cyan-950 px-8 py-6 text-lg"
               >
                 Contact Me
               </Button>
@@ -77,7 +77,7 @@ const Hero = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-200 hover:bg-cyan-500 hover:text-white rounded-full transition-all duration-300"
+                className="p-3 bg-gray-200 dark:bg-gray-700 hover:bg-cyan-500 hover:text-white dark:hover:bg-cyan-500 rounded-full transition-all duration-300"
               >
                 <Github size={24} />
               </a>
@@ -85,13 +85,13 @@ const Hero = () => {
                 href={personalInfo.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-200 hover:bg-cyan-500 hover:text-white rounded-full transition-all duration-300"
+                className="p-3 bg-gray-200 dark:bg-gray-700 hover:bg-cyan-500 hover:text-white dark:hover:bg-cyan-500 rounded-full transition-all duration-300"
               >
                 <Linkedin size={24} />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="p-3 bg-gray-200 hover:bg-cyan-500 hover:text-white rounded-full transition-all duration-300"
+                className="p-3 bg-gray-200 dark:bg-gray-700 hover:bg-cyan-500 hover:text-white dark:hover:bg-cyan-500 rounded-full transition-all duration-300"
               >
                 <Mail size={24} />
               </a>
