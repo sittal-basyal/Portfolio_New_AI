@@ -19,9 +19,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900 dark:text-white">
           My <span className="text-cyan-500">Projects</span>
         </h2>
         
@@ -32,7 +32,9 @@ const Projects = () => {
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
               variant={activeFilter === filter.id ? 'default' : 'outline'}
-              className={activeFilter === filter.id ? 'bg-cyan-500 hover:bg-cyan-600' : 'border-gray-300 hover:border-cyan-500'}
+              className={activeFilter === filter.id 
+                ? 'bg-cyan-500 hover:bg-cyan-600 text-white' 
+                : 'border-gray-300 dark:border-gray-600 hover:border-cyan-500 dark:hover:border-cyan-500 text-gray-700 dark:text-gray-300'}
             >
               {filter.label}
             </Button>
@@ -44,7 +46,7 @@ const Projects = () => {
           {filteredProjects.map(project => (
             <div
               key={project.id}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -55,13 +57,13 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
               <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-gray-800 group-hover:text-cyan-500 transition-colors duration-200">
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
-                    <Badge key={index} variant="secondary" className="bg-cyan-50 text-cyan-700 hover:bg-cyan-100">
+                    <Badge key={index} variant="secondary" className="bg-cyan-50 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-100 dark:hover:bg-cyan-800">
                       {tech}
                     </Badge>
                   ))}
@@ -69,14 +71,14 @@ const Projects = () => {
                 <div className="flex gap-4 pt-4">
                   <a
                     href={project.liveUrl}
-                    className="flex items-center gap-2 text-cyan-500 hover:text-cyan-600 font-medium transition-colors duration-200"
+                    className="flex items-center gap-2 text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200"
                   >
                     <ExternalLink size={18} />
                     Live Demo
                   </a>
                   <a
                     href={project.githubUrl}
-                    className="flex items-center gap-2 text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200"
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium transition-colors duration-200"
                   >
                     <Github size={18} />
                     Code

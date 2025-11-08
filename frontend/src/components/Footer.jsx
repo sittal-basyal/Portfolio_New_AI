@@ -5,13 +5,26 @@ import { Button } from './ui/button';
 
 const Footer = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 500);
     };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -36,7 +49,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 dark:bg-black text-white py-12 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
@@ -85,11 +98,11 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Back to Top Button */}
-      {showBackToTop && (
+      {/* Back to Top Button - Desktop Only */}
+      {showBackToTop && !isMobile && (
         <Button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-full shadow-lg z-40"
+          className="fixed bottom-8 right-8 bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-full shadow-lg z-40 transition-all duration-300 hover:scale-110"
           size="icon"
         >
           <ChevronUp size={24} />
